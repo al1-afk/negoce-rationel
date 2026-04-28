@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" id="htmlRoot">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NEGOCE RATIONEL - Fabricant marocain de conteneurs en acier galvanisé, bacs PEHD et caissons métalliques. Conforme EN 840-2." />
+  <meta name="keywords" content="conteneurs Maroc, bac galvanisé, PEHD 660L, caisson métallique, EN 840-2, Casablanca" />
+  <meta name="author" content="NEGOCE RATIONEL" />
+  <meta property="og:title" content="NEGOCE RATIONEL - Solutions de Collecte Premium" />
+  <meta property="og:description" content="Fabrication marocaine de conteneurs robustes conformes aux normes internationales." />
+  <meta property="og:type" content="website" />
+
+  <title>NEGOCE RATIONEL — Solutions de Collecte Premium au Maroc</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#f0f9f1',
+              100: '#dcf0de',
+              200: '#bbe1c1',
+              300: '#8ccb98',
+              400: '#5aae6c',
+              500: '#3a924f',
+              600: '#2a763d',
+              700: '#235e33',
+              800: '#1f4b2c',
+              900: '#1a3e26',
+              950: '#0d2415',
+            },
+            steel: {
+              50:  '#f6f7f9',
+              100: '#eceef2',
+              200: '#d5dae2',
+              300: '#b1bac9',
+              400: '#8694ab',
+              500: '#677791',
+              600: '#525f78',
+              700: '#444e62',
+              800: '#3a4252',
+              900: '#333947',
+              950: '#21242e',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+            arabic: ['Cairo', 'Tajawal', 'sans-serif'],
+          },
+          animation: {
+            'gradient-shift': 'gradient-shift 12s ease infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'shine': 'shine 3s ease-in-out infinite',
+            'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-sans bg-white text-steel-900 antialiased">
+
+  <!-- ============= TOP ANNOUNCEMENT BAR ============= -->
+  <div class="bg-brand-950 text-white text-xs sm:text-sm">
+    <div class="container mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-4">
+        <span class="hidden sm:inline-flex items-center gap-1.5">
+          <i class="fa-solid fa-circle-check text-brand-300"></i>
+          <span data-i18n="top.fab">Fabrication 100% Marocaine</span>
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <i class="fa-solid fa-shield-halved text-brand-300"></i>
+          <span data-i18n="top.norm">Norme EN 840-2</span>
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:0722785500" class="inline-flex items-center gap-1.5 hover:text-brand-300 transition">
+          <i class="fa-solid fa-phone-volume"></i>
+          07.22.78.55.00
+        </a>
+        <a href="mailto:negocerationel@gmail.com" class="hidden md:inline-flex items-center gap-1.5 hover:text-brand-300 transition">
+          <i class="fa-solid fa-envelope"></i>
+          negocerationel@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============= NAVBAR ============= -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-steel-100 transition-all">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-20">
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="relative w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-500/30 group-hover:scale-105 transition">
+            <i class="fa-solid fa-recycle text-white text-xl"></i>
+            <div class="absolute -top-1 -right-1 w-3 h-3 bg-brand-300 rounded-full animate-pulse-soft"></div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-lg leading-none tracking-tight">NEGOCE</div>
+            <div class="text-xs font-semibold text-brand-600 tracking-[0.25em]">RATIONEL</div>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1">
+          <a href="#accueil" class="px-4 py-2 text-sm font-medium text-steel-700 hover:text-brand-700 transition rounded-lg hover:bg-brand-50" data-i18n="nav.home">Accueil</a>
+          <a href="#produits" class="px-4 py-2 text-sm font-medium text-steel-700 hover:text-brand-700 transition rounded-lg hover:bg-brand-50" data-i18n="nav.products">Produits</a>
+          <a href="#caracteristiques" class="px-4 py-2 text-sm font-medium text-steel-700 hover:text-brand-700 transition rounded-lg hover:bg-brand-50" data-i18n="nav.specs">Caractéristiques</a>
+          <a href="#engagements" class="px-4 py-2 text-sm font-medium text-steel-700 hover:text-brand-700 transition rounded-lg hover:bg-brand-50" data-i18n="nav.why">Pourquoi Nous</a>
+          <a href="#temoignages" class="px-4 py-2 text-sm font-medium text-steel-700 hover:text-brand-700 transition rounded-lg hover:bg-brand-50" data-i18n="nav.testimonials">Témoignages</a>
+          <a href="#contact" class="px-4 py-2 text-sm font-medium text-steel-700 hover:text-brand-700 transition rounded-lg hover:bg-brand-50" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <!-- Language switcher -->
+          <div class="hidden sm:flex items-center bg-steel-100 rounded-full p-1 text-xs font-bold">
+            <button class="lang-btn px-3 py-1.5 rounded-full transition" data-lang="fr">FR</button>
+            <button class="lang-btn px-3 py-1.5 rounded-full transition" data-lang="ar">AR</button>
+          </div>
+
+          <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-brand-600 to-brand-700 text-white font-semibold text-sm rounded-full hover:shadow-lg hover:shadow-brand-500/30 hover:scale-105 transition-all">
+            <i class="fa-solid fa-file-invoice"></i>
+            <span data-i18n="nav.quote">Devis Gratuit</span>
+          </a>
+          <button id="menuToggle" class="lg:hidden w-10 h-10 inline-flex items-center justify-center rounded-lg hover:bg-steel-100">
+            <i class="fa-solid fa-bars text-steel-700 text-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden lg:hidden pb-4 space-y-1">
+        <a href="#accueil" class="block px-4 py-3 text-sm font-medium rounded-lg hover:bg-brand-50" data-i18n="nav.home">Accueil</a>
+        <a href="#produits" class="block px-4 py-3 text-sm font-medium rounded-lg hover:bg-brand-50" data-i18n="nav.products">Produits</a>
+        <a href="#caracteristiques" class="block px-4 py-3 text-sm font-medium rounded-lg hover:bg-brand-50" data-i18n="nav.specs">Caractéristiques</a>
+        <a href="#engagements" class="block px-4 py-3 text-sm font-medium rounded-lg hover:bg-brand-50" data-i18n="nav.why">Pourquoi Nous</a>
+        <a href="#temoignages" class="block px-4 py-3 text-sm font-medium rounded-lg hover:bg-brand-50" data-i18n="nav.testimonials">Témoignages</a>
+        <a href="#contact" class="block px-4 py-3 text-sm font-medium rounded-lg hover:bg-brand-50" data-i18n="nav.contact">Contact</a>
+        <div class="flex sm:hidden items-center justify-center gap-2 py-2">
+          <button class="lang-btn px-4 py-1.5 rounded-full text-xs font-bold bg-steel-100" data-lang="fr">FR</button>
+          <button class="lang-btn px-4 py-1.5 rounded-full text-xs font-bold bg-steel-100" data-lang="ar">العربية</button>
+        </div>
+        <a href="#contact" class="block mx-4 mt-2 px-5 py-3 bg-brand-600 text-white text-center font-semibold rounded-full" data-i18n="nav.quote">Devis Gratuit</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============= HERO ============= -->
+  <section id="accueil" class="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-steel-950 text-white">
+    <!-- Animated background -->
+    <div class="absolute inset-0 opacity-40">
+      <div class="absolute top-1/4 -left-20 w-96 h-96 bg-brand-500 rounded-full blur-[120px] animate-float"></div>
+      <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-700 rounded-full blur-[140px]"></div>
+      <div class="absolute top-0 right-1/3 w-72 h-72 bg-emerald-400 rounded-full blur-[100px] animate-float" style="animation-delay: 2s;"></div>
+    </div>
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 hero-grid opacity-[0.07]"></div>
+
+    <div class="container mx-auto px-4 py-20 lg:py-28 relative">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7" data-aos="fade-right" data-aos-duration="800">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-300 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-300"></span>
+            </span>
+            <span class="font-medium tracking-wide" data-i18n="hero.badge">Fabrication Marocaine • Normes EN 840-2</span>
+          </div>
+
+          <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
+            <span data-i18n="hero.title.1">Solutions de</span>
+            <span class="relative inline-block">
+              <span class="bg-gradient-to-r from-brand-300 via-emerald-300 to-brand-200 bg-clip-text text-transparent" data-i18n="hero.title.2">Collecte</span>
+              <svg class="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
+                <path d="M2 9C50 3 150 3 198 9" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+                <defs><linearGradient id="g1" x1="0" x2="200"><stop stop-color="#5aae6c"/><stop offset="1" stop-color="#bbe1c1"/></linearGradient></defs>
+              </svg>
+            </span>
+            <br />
+            <span class="text-white/90" data-i18n="hero.title.3">Premium</span> <span data-i18n="hero.title.4">en</span>
+            <span class="italic font-light" data-i18n="hero.title.5">Acier Galvanisé</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed mb-10" data-i18n="hero.subtitle">
+            Conteneurs robustes et durables, conçus au Maroc pour répondre aux exigences municipales et industrielles. Qualité européenne, savoir-faire local.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#contact" class="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-brand-900 font-bold rounded-full overflow-hidden hover:shadow-2xl hover:shadow-white/20 hover:-translate-y-0.5 transition-all">
+              <span class="relative z-10" data-i18n="hero.cta1">Demander un Devis</span>
+              <i class="fa-solid fa-arrow-right relative z-10 group-hover:translate-x-1 transition rtl-flip"></i>
+              <div class="absolute inset-0 bg-gradient-to-r from-brand-200 to-brand-300 opacity-0 group-hover:opacity-100 transition"></div>
+            </a>
+            <a href="#produits" class="inline-flex items-center gap-3 px-8 py-4 border-2 border-white/20 backdrop-blur-md font-semibold rounded-full hover:bg-white/10 hover:border-white/40 transition">
+              <i class="fa-solid fa-box-open"></i>
+              <span data-i18n="hero.cta2">Voir les Produits</span>
+            </a>
+          </div>
+
+          <!-- Trust indicators -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-14 pt-10 border-t border-white/10">
+            <div data-aos="fade-up" data-aos-delay="100">
+              <div class="flex items-center gap-2 text-brand-300 mb-1">
+                <i class="fa-solid fa-certificate"></i>
+                <span class="text-xs font-bold tracking-widest">QUALITÉ</span>
+              </div>
+              <div class="text-sm font-semibold" data-i18n="hero.trust.1">Certifié EN 840-2</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <div class="flex items-center gap-2 text-brand-300 mb-1">
+                <i class="fa-solid fa-medal"></i>
+                <span class="text-xs font-bold tracking-widest">PREMIUM</span>
+              </div>
+              <div class="text-sm font-semibold" data-i18n="hero.trust.2">Qualité Premium</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+              <div class="flex items-center gap-2 text-brand-300 mb-1">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <span class="text-xs font-bold tracking-widest">DURABLE</span>
+              </div>
+              <div class="text-sm font-semibold" data-i18n="hero.trust.3">Acier galvanisé 2mm</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400">
+              <div class="flex items-center gap-2 text-brand-300 mb-1">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span class="text-xs font-bold tracking-widest">SERVICE</span>
+              </div>
+              <div class="text-sm font-semibold" data-i18n="hero.trust.4">Livraison Maroc</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="lg:col-span-5 relative" data-aos="fade-left" data-aos-duration="1000">
+          <div class="relative">
+            <!-- Capacity badge -->
+            <div class="absolute -top-6 -left-6 z-20 hidden md:block" data-aos="zoom-in" data-aos-delay="600">
+              <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-2xl">
+                <div class="text-xs text-white/60 uppercase tracking-widest mb-1" data-i18n="hero.cap">Capacité</div>
+                <div class="font-display text-4xl font-bold">
+                  <span class="counter" data-target="1099">0</span>
+                  <span class="text-lg text-brand-300">L</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Best seller badge -->
+            <div class="absolute -bottom-4 -right-4 z-20 hidden md:block" data-aos="zoom-in" data-aos-delay="800">
+              <div class="bg-gradient-to-br from-brand-400 to-brand-600 rounded-2xl px-5 py-3 shadow-2xl shadow-brand-500/40 transform rotate-3">
+                <div class="font-bold" data-i18n="hero.bestseller">BEST SELLER 2026</div>
+              </div>
+            </div>
+
+            <!-- Main visual: real product photo -->
+            <div class="relative aspect-square bg-gradient-to-br from-white/5 to-white/0 rounded-3xl border border-white/10 backdrop-blur-sm p-8 flex items-center justify-center overflow-hidden">
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(90,174,108,0.25),transparent_70%)]"></div>
+              <img src="assets/images/bac-galvanise-660l.jpg"
+                   alt="Bac Galvanisé 660L NEGOCE RATIONEL"
+                   loading="eager"
+                   class="w-full h-full object-contain relative drop-shadow-2xl animate-float" />
+
+              <!-- Floating spec labels -->
+              <div class="absolute top-8 right-8 bg-white text-brand-900 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg" data-aos="fade-down" data-aos-delay="900">
+                <i class="fa-solid fa-shield-halved mr-1 text-brand-600"></i>
+                EN 840-2
+              </div>
+              <div class="absolute bottom-12 left-4 bg-brand-950/80 backdrop-blur text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg" data-aos="fade-up" data-aos-delay="1000">
+                <i class="fa-solid fa-weight-hanging mr-1 text-brand-300"></i>
+                250 KG
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave divider -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="w-full h-12 md:h-20">
+        <path d="M0,32 C240,80 480,0 720,32 C960,64 1200,16 1440,48 L1440,80 L0,80 Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============= STATS ============= -->
+  <section class="relative -mt-10 z-10 px-4">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl shadow-brand-900/10 p-8 border border-steel-100 hover:-translate-y-1 transition group" data-aos="fade-up">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-14 h-14 rounded-xl bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center transition">
+              <i class="fa-solid fa-truck-ramp-box text-brand-600 text-2xl"></i>
+            </div>
+            <div>
+              <div class="font-display text-4xl font-bold text-brand-700">
+                <span class="counter" data-target="500">0</span>+
+              </div>
+              <div class="text-sm text-steel-600 font-medium" data-i18n="stats.delivered">Conteneurs Livrés</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl shadow-brand-900/10 p-8 border border-steel-100 hover:-translate-y-1 transition group" data-aos="fade-up" data-aos-delay="150">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-14 h-14 rounded-xl bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center transition">
+              <i class="fa-solid fa-trophy text-brand-600 text-2xl"></i>
+            </div>
+            <div>
+              <div class="font-display text-4xl font-bold text-brand-700">
+                <span class="counter" data-target="15">0</span>+
+              </div>
+              <div class="text-sm text-steel-600 font-medium" data-i18n="stats.experience">Années d'Expérience</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl shadow-brand-900/10 p-8 border border-steel-100 hover:-translate-y-1 transition group" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-14 h-14 rounded-xl bg-brand-50 group-hover:bg-brand-100 flex items-center justify-center transition">
+              <i class="fa-solid fa-handshake text-brand-600 text-2xl"></i>
+            </div>
+            <div>
+              <div class="font-display text-4xl font-bold text-brand-700">
+                <span class="counter" data-target="50">0</span>+
+              </div>
+              <div class="text-sm text-steel-600 font-medium" data-i18n="stats.clients">Clients Satisfaits</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= PRODUITS ============= -->
+  <section id="produits" class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="inline-block px-4 py-1.5 bg-brand-50 text-brand-700 text-xs font-bold tracking-[0.2em] rounded-full mb-4" data-i18n="products.eyebrow">CATALOGUE</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4"><span data-i18n="products.title.1">Nos</span> <span class="text-brand-600 italic" data-i18n="products.title.2">Produits</span></h2>
+        <div class="w-20 h-1 bg-brand-500 rounded-full mx-auto mb-6"></div>
+        <p class="text-lg text-steel-600" data-i18n="products.subtitle">Des conteneurs en acier galvanisé conçus pour durer et répondre aux normes les plus exigeantes.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+
+        <!-- Product 1: Bac PEHD 660L -->
+        <article class="group product-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="relative bg-gradient-to-br from-steel-50 to-white rounded-3xl border border-steel-100 hover:border-brand-300 hover:shadow-2xl hover:shadow-brand-500/10 transition-all overflow-hidden h-full flex flex-col">
+            <div class="absolute top-4 left-4 z-10">
+              <span class="inline-block px-3 py-1 bg-brand-600 text-white text-[10px] font-bold tracking-widest rounded-full" data-i18n="p1.badge">BEST-SELLER</span>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-brand-50/60 to-white p-6 flex items-center justify-center relative overflow-hidden">
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(90,174,108,0.15),transparent_70%)] opacity-0 group-hover:opacity-100 transition"></div>
+              <img src="assets/images/bac-pehd-660l.jpg"
+                   alt="Bac Roulant PEHD 660L"
+                   loading="lazy"
+                   class="w-full h-full object-contain group-hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-3" data-i18n="p1.name">Bac Roulant PEHD 660L</h3>
+              <ul class="space-y-2 text-sm text-steel-600 flex-1">
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p1.f1">Polyéthylène haute densité</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p1.f2">Capacité 660L / 360L / 240L / 120L / 50L</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p1.f3">4 roues robustes</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p1.f4">Couleur au choix</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p1.f5">Usage collectivités &amp; industriel</span></li>
+              </ul>
+              <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-brand-700 font-semibold text-sm group/btn">
+                <span data-i18n="products.cta">Demander un devis</span>
+                <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition rtl-flip"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2: Caisson 5/6 m³ -->
+        <article class="group product-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="relative bg-gradient-to-br from-steel-50 to-white rounded-3xl border border-steel-100 hover:border-brand-300 hover:shadow-2xl hover:shadow-brand-500/10 transition-all overflow-hidden h-full flex flex-col">
+            <div class="absolute top-4 left-4 z-10">
+              <span class="inline-block px-3 py-1 bg-steel-800 text-white text-[10px] font-bold tracking-widest rounded-full" data-i18n="p2.badge">INDUSTRIEL</span>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-brand-50/60 to-white p-6 flex items-center justify-center relative overflow-hidden">
+              <img src="assets/images/caisson-metallique.jpg"
+                   alt="Caisson Métallique 5/6 m³"
+                   loading="lazy"
+                   class="w-full h-full object-contain group-hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-3" data-i18n="p2.name">Caisson Métallique 5/6 m³</h3>
+              <ul class="space-y-2 text-sm text-steel-600 flex-1">
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p2.f1">Volume 5 à 6 m³</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p2.f2">Acier renforcé</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p2.f3">Couleur au choix</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p2.f4">Usage chantiers &amp; industriel</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p2.f5">Construction soudée résistante</span></li>
+              </ul>
+              <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-brand-700 font-semibold text-sm group/btn">
+                <span data-i18n="products.cta">Demander un devis</span>
+                <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition rtl-flip"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3: Galvanisé 660L -->
+        <article class="group product-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="relative bg-gradient-to-br from-steel-50 to-white rounded-3xl border border-steel-100 hover:border-brand-300 hover:shadow-2xl hover:shadow-brand-500/10 transition-all overflow-hidden h-full flex flex-col">
+            <div class="absolute top-4 left-4 z-10">
+              <span class="inline-block px-3 py-1 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[10px] font-bold tracking-widest rounded-full" data-i18n="p3.badge">PREMIUM</span>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-steel-50 to-white p-6 flex items-center justify-center relative overflow-hidden">
+              <img src="assets/images/bac-galvanise-660l.jpg"
+                   alt="Bac Galvanisé 660L 4 roues"
+                   loading="lazy"
+                   class="w-full h-full object-contain group-hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-3" data-i18n="p3.name">Bac Galvanisé 660L — 4 roues</h3>
+              <ul class="space-y-2 text-sm text-steel-600 flex-1">
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p3.f1">Acier galvanisé à chaud</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p3.f2">4 roues (2 avec freins)</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p3.f3">Couvercle plastique vert</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p3.f4">Charge max 250 kg</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p3.f5">Conforme EN 840-2</span></li>
+              </ul>
+              <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-brand-700 font-semibold text-sm group/btn">
+                <span data-i18n="products.cta">Demander un devis</span>
+                <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition rtl-flip"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4: Galvanisé 360L -->
+        <article class="group product-card" data-aos="fade-up" data-aos-delay="450">
+          <div class="relative bg-gradient-to-br from-steel-50 to-white rounded-3xl border border-steel-100 hover:border-brand-300 hover:shadow-2xl hover:shadow-brand-500/10 transition-all overflow-hidden h-full flex flex-col">
+            <div class="absolute top-4 left-4 z-10">
+              <span class="inline-block px-3 py-1 bg-blue-600 text-white text-[10px] font-bold tracking-widest rounded-full" data-i18n="p4.badge">COMPACT</span>
+            </div>
+            <div class="aspect-square bg-gradient-to-br from-steel-50 to-white p-6 flex items-center justify-center relative overflow-hidden">
+              <img src="assets/images/bac-galvanise-360l.jpg"
+                   alt="Bac Galvanisé 360L 2 roues"
+                   loading="lazy"
+                   class="w-full h-full object-contain group-hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-3" data-i18n="p4.name">Bac Galvanisé 360L — 2 roues</h3>
+              <ul class="space-y-2 text-sm text-steel-600 flex-1">
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p4.f1">Acier galvanisé à chaud</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p4.f2">2 roues</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p4.f3">Couvercle plastique vert</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p4.f4">Usage résidentiel &amp; commercial</span></li>
+                <li class="flex gap-2"><i class="fa-solid fa-check text-brand-500 mt-0.5"></i><span data-i18n="p4.f5">Compact et maniable</span></li>
+              </ul>
+              <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-brand-700 font-semibold text-sm group/btn">
+                <span data-i18n="products.cta">Demander un devis</span>
+                <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition rtl-flip"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= TECHNICAL SPECS ============= -->
+  <section id="caracteristiques" class="py-24 bg-gradient-to-br from-steel-50 via-brand-50/30 to-white relative overflow-hidden">
+    <div class="absolute -top-20 -right-20 w-96 h-96 bg-brand-200 rounded-full blur-3xl opacity-30"></div>
+    <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-brand-100 rounded-full blur-3xl opacity-40"></div>
+
+    <div class="container mx-auto px-4 relative">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+          <span class="inline-block px-4 py-1.5 bg-brand-100 text-brand-700 text-xs font-bold tracking-[0.2em] rounded-full mb-4" data-i18n="specs.eyebrow">FICHE TECHNIQUE</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">
+            <span data-i18n="specs.title.1">Caractéristiques</span> <span class="text-brand-600 italic" data-i18n="specs.title.2">— 660L</span>
+          </h2>
+          <p class="text-lg text-steel-600 mb-8" data-i18n="specs.subtitle">
+            Notre référence phare, conçue selon les normes européennes les plus strictes. Idéale pour les collectivités, les ensembles résidentiels et les sites industriels.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl p-4 border border-steel-100 shadow-sm">
+              <i class="fa-solid fa-cube text-brand-500 text-xl mb-2"></i>
+              <div class="text-xs text-steel-500 uppercase font-semibold tracking-wider" data-i18n="specs.volume">Volume</div>
+              <div class="font-display text-2xl font-bold text-steel-900">660 L</div>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-steel-100 shadow-sm">
+              <i class="fa-solid fa-weight-hanging text-brand-500 text-xl mb-2"></i>
+              <div class="text-xs text-steel-500 uppercase font-semibold tracking-wider" data-i18n="specs.charge">Charge max</div>
+              <div class="font-display text-2xl font-bold text-steel-900">250 KG</div>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-steel-100 shadow-sm">
+              <i class="fa-solid fa-ruler-combined text-brand-500 text-xl mb-2"></i>
+              <div class="text-xs text-steel-500 uppercase font-semibold tracking-wider" data-i18n="specs.height">Hauteur</div>
+              <div class="font-display text-2xl font-bold text-steel-900">1160 mm</div>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-steel-100 shadow-sm">
+              <i class="fa-solid fa-shield-halved text-brand-500 text-xl mb-2"></i>
+              <div class="text-xs text-steel-500 uppercase font-semibold tracking-wider" data-i18n="specs.norm">Norme</div>
+              <div class="font-display text-2xl font-bold text-steel-900">EN 840-2</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spec table -->
+        <div data-aos="fade-left">
+          <div class="bg-white rounded-3xl shadow-2xl shadow-brand-900/10 border border-steel-100 overflow-hidden">
+            <div class="bg-gradient-to-r from-brand-700 to-brand-900 px-8 py-5 flex items-center justify-between">
+              <div class="flex items-center gap-3 text-white">
+                <i class="fa-solid fa-clipboard-list text-xl"></i>
+                <span class="font-bold tracking-wider text-sm" data-i18n="specs.full">SPÉCIFICATIONS COMPLÈTES</span>
+              </div>
+              <span class="px-3 py-1 bg-white/20 rounded-full text-white text-[10px] font-bold tracking-widest" data-i18n="specs.premium">PREMIUM</span>
+            </div>
+            <div class="divide-y divide-steel-100">
+              <div class="flex justify-between items-center px-8 py-4 hover:bg-brand-50/30 transition">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.volume">Volume</span>
+                <span class="font-bold text-steel-900">660 L</span>
+              </div>
+              <div class="flex justify-between items-center px-8 py-4 hover:bg-brand-50/30 transition">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.width">Largeur</span>
+                <span class="font-bold text-steel-900">750 mm</span>
+              </div>
+              <div class="flex justify-between items-center px-8 py-4 hover:bg-brand-50/30 transition">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.height">Hauteur</span>
+                <span class="font-bold text-steel-900">1160 mm</span>
+              </div>
+              <div class="flex justify-between items-center px-8 py-4 hover:bg-brand-50/30 transition">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.depth">Profondeur</span>
+                <span class="font-bold text-steel-900">1160 mm</span>
+              </div>
+              <div class="flex justify-between items-center px-8 py-4 hover:bg-brand-50/30 transition">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.charge">Charge max</span>
+                <span class="font-bold text-steel-900">250 kg</span>
+              </div>
+              <div class="flex justify-between items-center px-8 py-4 hover:bg-brand-50/30 transition">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.weight">Poids à vide</span>
+                <span class="font-bold text-steel-900">45 - 65 kg</span>
+              </div>
+              <div class="flex justify-between items-center px-8 py-4 hover:bg-brand-50/30 transition">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.wheels">Roues</span>
+                <span class="font-bold text-steel-900" data-i18n="specs.row.wheels.v">4 × 200 mm (2 avec freins)</span>
+              </div>
+              <div class="flex justify-between items-center px-8 py-4 hover:bg-brand-50/30 transition">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.material">Matière</span>
+                <span class="font-bold text-steel-900" data-i18n="specs.row.material.v">Acier galvanisé à chaud</span>
+              </div>
+              <div class="flex justify-between items-center px-8 py-4 hover:bg-brand-50/30 transition">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.thickness">Épaisseur tôle</span>
+                <span class="font-bold text-steel-900" data-i18n="specs.row.thickness.v">2,0 mm minimum</span>
+              </div>
+              <div class="flex justify-between items-center px-8 py-4 bg-brand-50/50">
+                <span class="text-steel-600 font-medium" data-i18n="specs.row.norm">Norme</span>
+                <span class="font-bold text-brand-700 inline-flex items-center gap-1">
+                  <i class="fa-solid fa-circle-check"></i>
+                  EN 840-2
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= ENGAGEMENTS ============= -->
+  <section id="engagements" class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="inline-block px-4 py-1.5 bg-brand-50 text-brand-700 text-xs font-bold tracking-[0.2em] rounded-full mb-4" data-i18n="why.eyebrow">NOS ENGAGEMENTS</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4"><span data-i18n="why.title.1">Pourquoi</span> <span class="text-brand-600 italic" data-i18n="why.title.2">Nous Choisir</span></h2>
+        <div class="w-20 h-1 bg-brand-500 rounded-full mx-auto"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group relative bg-gradient-to-br from-brand-50 to-white p-8 rounded-3xl border border-brand-100 hover:border-brand-400 hover:-translate-y-2 transition-all" data-aos="fade-up">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-brand-500/30 mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-flag"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold mb-2" data-i18n="why.c1.t">Fabrication Locale</h3>
+          <p class="text-steel-600 text-sm leading-relaxed" data-i18n="why.c1.d">Production nationale au Maroc garantissant réactivité et suivi qualité.</p>
+        </div>
+        <div class="group relative bg-gradient-to-br from-brand-50 to-white p-8 rounded-3xl border border-brand-100 hover:border-brand-400 hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-brand-500/30 mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold mb-2" data-i18n="why.c2.t">Norme EN 840-2</h3>
+          <p class="text-steel-600 text-sm leading-relaxed" data-i18n="why.c2.d">Produits conformes aux standards internationaux de qualité.</p>
+        </div>
+        <div class="group relative bg-gradient-to-br from-brand-50 to-white p-8 rounded-3xl border border-brand-100 hover:border-brand-400 hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-brand-500/30 mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-truck"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold mb-2" data-i18n="why.c3.t">Compatible Collecte</h3>
+          <p class="text-steel-600 text-sm leading-relaxed" data-i18n="why.c3.d">Conçus pour s'adapter aux systèmes de levage standards.</p>
+        </div>
+        <div class="group relative bg-gradient-to-br from-brand-50 to-white p-8 rounded-3xl border border-brand-100 hover:border-brand-400 hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-brand-500/30 mb-5 group-hover:scale-110 transition">
+            <i class="fa-solid fa-vial-circle-check"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold mb-2" data-i18n="why.c4.t">Certifié Laboratoire</h3>
+          <p class="text-steel-600 text-sm leading-relaxed" data-i18n="why.c4.d">Acier galvanisé testé et certifié pour durabilité maximale.</p>
+        </div>
+      </div>
+
+      <!-- Process timeline -->
+      <div class="mt-24" data-aos="fade-up">
+        <div class="text-center mb-12">
+          <h3 class="font-display text-3xl font-bold mb-2"><span data-i18n="proc.title.1">Notre</span> <span class="text-brand-600 italic" data-i18n="proc.title.2">Processus</span></h3>
+          <p class="text-steel-600" data-i18n="proc.subtitle">De la prise de besoin à la livraison sur site</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8 relative">
+          <div class="hidden md:block absolute top-8 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-brand-200 via-brand-400 to-brand-200"></div>
+          <div class="relative text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white border-4 border-brand-500 flex items-center justify-center font-display font-bold text-2xl text-brand-700 relative z-10 shadow-lg">1</div>
+            <h4 class="font-bold mb-2" data-i18n="proc.s1.t">Étude</h4>
+            <p class="text-sm text-steel-600" data-i18n="proc.s1.d">Analyse de votre besoin et conseil personnalisé</p>
+          </div>
+          <div class="relative text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white border-4 border-brand-500 flex items-center justify-center font-display font-bold text-2xl text-brand-700 relative z-10 shadow-lg">2</div>
+            <h4 class="font-bold mb-2" data-i18n="proc.s2.t">Devis</h4>
+            <p class="text-sm text-steel-600" data-i18n="proc.s2.d">Proposition tarifaire détaillée sous 24h</p>
+          </div>
+          <div class="relative text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white border-4 border-brand-500 flex items-center justify-center font-display font-bold text-2xl text-brand-700 relative z-10 shadow-lg">3</div>
+            <h4 class="font-bold mb-2" data-i18n="proc.s3.t">Fabrication</h4>
+            <p class="text-sm text-steel-600" data-i18n="proc.s3.d">Production dans nos ateliers au Maroc</p>
+          </div>
+          <div class="relative text-center">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white border-4 border-brand-500 flex items-center justify-center font-display font-bold text-2xl text-brand-700 relative z-10 shadow-lg">4</div>
+            <h4 class="font-bold mb-2" data-i18n="proc.s4.t">Livraison</h4>
+            <p class="text-sm text-steel-600" data-i18n="proc.s4.d">Acheminement et installation sur site</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= TÉMOIGNAGES ============= -->
+  <section id="temoignages" class="py-24 bg-gradient-to-br from-brand-950 via-brand-900 to-steel-950 text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-10 hero-grid"></div>
+    <div class="absolute -top-20 right-1/4 w-96 h-96 bg-brand-500 rounded-full blur-[120px] opacity-30"></div>
+
+    <div class="container mx-auto px-4 relative">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md text-brand-300 text-xs font-bold tracking-[0.2em] rounded-full mb-4 border border-white/10" data-i18n="tst.eyebrow">TÉMOIGNAGES</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4"><span data-i18n="tst.title.1">La</span> <span class="italic text-brand-300" data-i18n="tst.title.2">Confiance</span> <span data-i18n="tst.title.3">de Nos Clients</span></h2>
+        <div class="w-20 h-1 bg-brand-400 rounded-full mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition" data-aos="fade-up">
+          <div class="flex text-amber-300 mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <i class="fa-solid fa-quote-left text-brand-400 text-3xl mb-3 block"></i>
+          <p class="text-white/85 leading-relaxed mb-6 italic" data-i18n="tst.t1">
+            Des conteneurs d'une qualité exceptionnelle. Nos équipes de collecte apprécient la robustesse et la facilité d'utilisation au quotidien.
+          </p>
+          <div class="flex items-center gap-3 pt-6 border-t border-white/10">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center font-bold text-lg">RP</div>
+            <div>
+              <div class="font-bold" data-i18n="tst.t1.author">Responsable Propreté</div>
+              <div class="text-xs text-white/60" data-i18n="tst.t1.role">Commune Urbaine, Casablanca</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition" data-aos="fade-up" data-aos-delay="150">
+          <div class="flex text-amber-300 mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <i class="fa-solid fa-quote-left text-brand-400 text-3xl mb-3 block"></i>
+          <p class="text-white/85 leading-relaxed mb-6 italic" data-i18n="tst.t2">
+            Partenaire fiable depuis plusieurs années. Le rapport qualité-prix est imbattable, et la conformité EN 840-2 rassure pleinement.
+          </p>
+          <div class="flex items-center gap-3 pt-6 border-t border-white/10">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center font-bold text-lg">DT</div>
+            <div>
+              <div class="font-bold" data-i18n="tst.t2.author">Directeur Technique</div>
+              <div class="text-xs text-white/60" data-i18n="tst.t2.role">Société de Gestion des Déchets</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex text-amber-300 mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <i class="fa-solid fa-quote-left text-brand-400 text-3xl mb-3 block"></i>
+          <p class="text-white/85 leading-relaxed mb-6 italic" data-i18n="tst.t3">
+            Service réactif et produits durables. Les bacs résistent parfaitement aux conditions climatiques marocaines et à l'usage intensif.
+          </p>
+          <div class="flex items-center gap-3 pt-6 border-t border-white/10">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center font-bold text-lg">CS</div>
+            <div>
+              <div class="font-bold" data-i18n="tst.t3.author">Chef de Service Environnement</div>
+              <div class="text-xs text-white/60" data-i18n="tst.t3.role">Municipalité, Rabat</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= CTA ============= -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="relative bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 rounded-[2.5rem] p-10 md:p-16 overflow-hidden text-white" data-aos="zoom-in">
+        <div class="absolute -top-10 -right-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-brand-300/20 rounded-full blur-3xl"></div>
+        <div class="relative grid md:grid-cols-3 gap-10 items-center">
+          <div class="md:col-span-2">
+            <h2 class="font-display text-3xl md:text-5xl font-bold mb-4 leading-tight">
+              <span data-i18n="cta.title.1">Prêt à équiper votre</span> <span class="italic" data-i18n="cta.title.2">collectivité</span> <span data-i18n="cta.title.3">?</span>
+            </h2>
+            <p class="text-white/85 text-lg max-w-xl" data-i18n="cta.subtitle">
+              Recevez un devis personnalisé sous 24h. Nos équipes sont à votre disposition pour répondre à toutes vos questions.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-800 font-bold rounded-full hover:scale-105 transition shadow-xl">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              <span data-i18n="cta.btn1">Demander un Devis Gratuit</span>
+            </a>
+            <a href="tel:0722785500" class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition">
+              <i class="fa-solid fa-phone"></i>
+              07.22.78.55.00
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= CONTACT ============= -->
+  <section id="contact" class="py-24 bg-gradient-to-br from-steel-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="inline-block px-4 py-1.5 bg-brand-50 text-brand-700 text-xs font-bold tracking-[0.2em] rounded-full mb-4" data-i18n="contact.eyebrow">NOUS CONTACTER</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4"><span data-i18n="contact.title.1">Parlons de votre</span> <span class="text-brand-600 italic" data-i18n="contact.title.2">projet</span></h2>
+        <p class="text-lg text-steel-600" data-i18n="contact.subtitle">Demandez un devis gratuit ou posez-nous vos questions. Nous répondons sous 24h.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+        <!-- Form -->
+        <div class="lg:col-span-3 bg-white rounded-3xl p-8 md:p-10 border border-steel-100 shadow-xl shadow-brand-900/5" data-aos="fade-right">
+          <h3 class="font-display text-2xl font-bold mb-6" data-i18n="form.title">Demander un devis</h3>
+          <form id="contactForm" class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-steel-700 mb-2" data-i18n="form.name">Votre nom</label>
+                <div class="relative">
+                  <i class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-steel-400 form-icon"></i>
+                  <input type="text" name="name" required class="w-full pl-11 pr-4 py-3.5 bg-steel-50 border border-steel-200 rounded-xl focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-100 outline-none transition" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-steel-700 mb-2" data-i18n="form.phone">Téléphone</label>
+                <div class="relative">
+                  <i class="fa-solid fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-steel-400 form-icon"></i>
+                  <input type="tel" name="phone" class="w-full pl-11 pr-4 py-3.5 bg-steel-50 border border-steel-200 rounded-xl focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-100 outline-none transition" />
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-steel-700 mb-2" data-i18n="form.email">Adresse email</label>
+              <div class="relative">
+                <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-steel-400 form-icon"></i>
+                <input type="email" name="email" required class="w-full pl-11 pr-4 py-3.5 bg-steel-50 border border-steel-200 rounded-xl focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-100 outline-none transition" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-steel-700 mb-2" data-i18n="form.product">Produit d'intérêt</label>
+              <select name="product" class="w-full px-4 py-3.5 bg-steel-50 border border-steel-200 rounded-xl focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-100 outline-none transition">
+                <option data-i18n="p1.name">Bac Roulant PEHD 660L</option>
+                <option data-i18n="p2.name">Caisson Métallique 5/6 m³</option>
+                <option data-i18n="p3.name">Bac Galvanisé 660L — 4 roues</option>
+                <option data-i18n="p4.name">Bac Galvanisé 360L — 2 roues</option>
+                <option data-i18n="form.product.5">Solution sur mesure</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-steel-700 mb-2" data-i18n="form.message">Décrivez votre besoin</label>
+              <textarea name="message" rows="5" class="w-full px-4 py-3.5 bg-steel-50 border border-steel-200 rounded-xl focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-100 outline-none transition resize-none" data-i18n-placeholder="form.message.ph" placeholder="Quantité, livraison, délai..."></textarea>
+            </div>
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-3 py-4 bg-gradient-to-r from-brand-600 to-brand-700 text-white font-bold rounded-xl hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5 transition">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span data-i18n="form.submit">Envoyer le Message</span>
+            </button>
+            <p id="formMsg" class="hidden text-sm text-center"></p>
+          </form>
+        </div>
+
+        <!-- Info -->
+        <div class="lg:col-span-2 space-y-6" data-aos="fade-left">
+          <a href="tel:0722785500" class="block bg-white rounded-2xl p-6 border border-steel-100 hover:border-brand-300 hover:shadow-xl transition group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 group-hover:bg-brand-500 flex items-center justify-center transition">
+                <i class="fa-solid fa-phone-volume text-brand-700 group-hover:text-white text-lg transition"></i>
+              </div>
+              <div>
+                <div class="text-xs uppercase font-bold tracking-widest text-steel-500 mb-1" data-i18n="info.phone.t">Téléphone</div>
+                <div class="font-bold text-lg" dir="ltr">07.22.78.55.00</div>
+                <div class="text-sm text-steel-500" data-i18n="info.phone.s">Lun - Sam, 9h - 18h</div>
+              </div>
+            </div>
+          </a>
+
+          <a href="mailto:negocerationel@gmail.com" class="block bg-white rounded-2xl p-6 border border-steel-100 hover:border-brand-300 hover:shadow-xl transition group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 group-hover:bg-brand-500 flex items-center justify-center transition">
+                <i class="fa-solid fa-envelope text-brand-700 group-hover:text-white text-lg transition"></i>
+              </div>
+              <div>
+                <div class="text-xs uppercase font-bold tracking-widest text-steel-500 mb-1" data-i18n="info.email.t">Email</div>
+                <div class="font-bold text-base break-all" dir="ltr">negocerationel@gmail.com</div>
+                <div class="text-sm text-steel-500" data-i18n="info.email.s">Réponse sous 24h</div>
+              </div>
+            </div>
+          </a>
+
+          <div class="bg-white rounded-2xl p-6 border border-steel-100">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center">
+                <i class="fa-solid fa-location-dot text-brand-700 text-lg"></i>
+              </div>
+              <div>
+                <div class="text-xs uppercase font-bold tracking-widest text-steel-500 mb-1" data-i18n="info.addr.t">Adresse</div>
+                <div class="font-bold leading-snug" data-i18n="info.addr.l1">61 Angle Av Lala Yacout Et Mostafa Maani</div>
+                <div class="text-sm text-steel-700" data-i18n="info.addr.l2">N°62 Etg 2, Casablanca, Maroc</div>
+              </div>
+            </div>
+            <div class="aspect-video rounded-xl overflow-hidden border border-steel-100">
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-7.6296%2C33.5731%2C-7.5996%2C33.6031&amp;layer=mapnik"
+                class="w-full h-full"
+                style="border:0"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-brand-700 to-brand-900 text-white rounded-2xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center">
+                <i class="fa-solid fa-user-tie text-white text-lg"></i>
+              </div>
+              <div>
+                <div class="text-xs uppercase font-bold tracking-widest text-brand-200 mb-1" data-i18n="info.mgr.t">Gérant</div>
+                <div class="font-bold text-lg" data-i18n="info.mgr.n">Mr. KAMAL SOUFIANE</div>
+                <div class="text-sm text-white/70" data-i18n="info.mgr.s">SARL AU — Casablanca</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= FOOTER ============= -->
+  <footer class="bg-steel-950 text-white pt-20 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-10 mb-16">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg">
+              <i class="fa-solid fa-recycle text-white text-xl"></i>
+            </div>
+            <div>
+              <div class="font-display font-bold text-lg leading-none">NEGOCE</div>
+              <div class="text-xs font-semibold text-brand-400 tracking-[0.25em]">RATIONEL</div>
+            </div>
+          </div>
+          <p class="text-white/60 leading-relaxed mb-6 max-w-md" data-i18n="foot.desc">
+            Fabricant marocain de conteneurs en acier galvanisé, bacs PEHD et caissons métalliques. Qualité européenne, savoir-faire local, depuis plus de 15 ans.
+          </p>
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-500 flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-500 flex items-center justify-center transition"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-500 flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/212722785500" class="w-10 h-10 rounded-full bg-white/10 hover:bg-emerald-500 flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-5 text-sm tracking-widest" data-i18n="foot.nav">NAVIGATION</h4>
+          <ul class="space-y-3 text-sm text-white/60">
+            <li><a href="#accueil" class="hover:text-brand-400 transition" data-i18n="nav.home">Accueil</a></li>
+            <li><a href="#produits" class="hover:text-brand-400 transition" data-i18n="nav.products">Produits</a></li>
+            <li><a href="#caracteristiques" class="hover:text-brand-400 transition" data-i18n="nav.specs">Caractéristiques</a></li>
+            <li><a href="#engagements" class="hover:text-brand-400 transition" data-i18n="nav.why">Pourquoi Nous</a></li>
+            <li><a href="#contact" class="hover:text-brand-400 transition" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-5 text-sm tracking-widest" data-i18n="foot.contact">CONTACT</h4>
+          <ul class="space-y-3 text-sm text-white/60">
+            <li class="flex gap-2"><i class="fa-solid fa-phone text-brand-400 mt-1"></i> <span dir="ltr">07.22.78.55.00</span></li>
+            <li class="flex gap-2"><i class="fa-solid fa-envelope text-brand-400 mt-1"></i> <span dir="ltr">negocerationel@gmail.com</span></li>
+            <li class="flex gap-2"><i class="fa-solid fa-location-dot text-brand-400 mt-1"></i> <span data-i18n="info.addr.l1">61 Av Lala Yacout, Casablanca</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/50">
+        <div data-i18n="foot.copyright">© 2026 NEGOCE RATIONEL. Tous droits réservés. — SARL AU, Casablanca, Maroc</div>
+        <div class="flex items-center gap-2">
+          <span data-i18n="foot.heart.1">Conçu avec</span>
+          <i class="fa-solid fa-heart text-red-500"></i>
+          <span data-i18n="foot.heart.2">au Maroc</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============= FLOATING ACTION BUTTONS ============= -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+    <a href="https://wa.me/212722785500?text=Bonjour%20NEGOCE%20RATIONEL,%20je%20souhaite%20obtenir%20un%20devis"
+       target="_blank"
+       class="group w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 hover:scale-110 transition"
+       aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
+      <span class="absolute right-full mr-3 px-3 py-1.5 bg-steel-900 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition">WhatsApp</span>
+    </a>
+    <a href="tel:0722785500"
+       class="group w-14 h-14 rounded-full bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center shadow-2xl shadow-blue-500/40 hover:scale-110 transition"
+       aria-label="Téléphone">
+      <i class="fa-solid fa-phone text-xl"></i>
+      <span class="absolute right-full mr-3 px-3 py-1.5 bg-steel-900 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition">Appeler</span>
+    </a>
+    <a href="mailto:negocerationel@gmail.com"
+       class="group w-14 h-14 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center shadow-2xl shadow-red-500/40 hover:scale-110 transition"
+       aria-label="Email">
+      <i class="fa-solid fa-envelope text-xl"></i>
+      <span class="absolute right-full mr-3 px-3 py-1.5 bg-steel-900 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition">Email</span>
+    </a>
+    <button id="backToTop"
+       class="hidden w-14 h-14 rounded-full bg-brand-600 hover:bg-brand-700 text-white items-center justify-center shadow-2xl shadow-brand-500/40 hover:scale-110 transition"
+       aria-label="Retour en haut">
+      <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/translations.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>

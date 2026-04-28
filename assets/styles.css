@@ -1,0 +1,188 @@
+/* ============= NEGOCE RATIONEL — Custom Styles ============= */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ============= Arabic / RTL ============= */
+body.lang-ar {
+  font-family: 'Cairo', 'Tajawal', 'Inter', system-ui, sans-serif;
+}
+
+body.lang-ar .font-display {
+  font-family: 'Cairo', 'Tajawal', serif;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+body.lang-ar h1,
+body.lang-ar h2,
+body.lang-ar h3,
+body.lang-ar h4 {
+  letter-spacing: 0;
+}
+
+body.lang-ar .italic {
+  font-style: normal;
+}
+
+body.lang-ar [dir="ltr"] {
+  display: inline-block;
+  unicode-bidi: embed;
+}
+
+/* Flip directional icons (arrows) when in RTL */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Form input padding fix in RTL */
+[dir="rtl"] input.pl-11,
+[dir="rtl"] textarea.pl-11 {
+  padding-left: 1rem;
+  padding-right: 2.75rem;
+}
+
+[dir="rtl"] .form-icon {
+  left: auto;
+  right: 1rem;
+}
+
+/* Underline SVG flip in RTL */
+[dir="rtl"] h1 svg {
+  transform: scaleX(-1);
+}
+
+/* Wave divider — keep oriented in RTL */
+[dir="rtl"] section .absolute > svg {
+  /* keep waves natural, no flip */
+}
+
+/* ============= Keyframes ============= */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-12px); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+@keyframes shine {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* ============= Hero grid background ============= */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ============= Scrollbar ============= */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f9f1;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #5aae6c, #235e33);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3a924f, #1a3e26);
+}
+
+/* ============= Selection ============= */
+::selection {
+  background: #235e33;
+  color: white;
+}
+
+/* ============= Navbar shadow on scroll ============= */
+#navbar.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  border-bottom-color: transparent;
+}
+
+/* ============= Product card 3D tilt feel ============= */
+.product-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* ============= Form focus glow ============= */
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 4px rgba(90, 174, 108, 0.15);
+}
+
+/* ============= Counter animation prep ============= */
+.counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============= Container widths ============= */
+.container {
+  max-width: 1280px;
+}
+
+/* ============= Hover utilities ============= */
+.shine-on-hover {
+  position: relative;
+  overflow: hidden;
+}
+.shine-on-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.6s;
+}
+.shine-on-hover:hover::before {
+  left: 100%;
+}
+
+/* ============= Hide scrollbar on specific elements ============= */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ============= Reduced motion ============= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============= Print ============= */
+@media print {
+  #navbar, .fixed, footer { display: none !important; }
+  body { color: #000; background: #fff; }
+}
