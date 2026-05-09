@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://negocerationel.ma/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://negocerationel.ma/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://negocerationel.ma/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://negocerationel.ma/"/>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/bac-galvanise-660l.jpg</image:loc><image:title>Bac galvanisé 660L 4 roues</image:title></image:image>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/bac-pehd-660l.jpg</image:loc><image:title>Bac roulant PEHD 660L</image:title></image:image>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/bac-galvanise-360l.jpg</image:loc><image:title>Bac galvanisé 360L 2 roues</image:title></image:image>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/caisson-metallique.jpg</image:loc><image:title>Caisson métallique 5/6 m³</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/?lang=ar</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/bac-a-ordures.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/bac-galvanise-660l.jpg</image:loc><image:title>Bac à ordures</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/poubelle-plastique.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/bac-pehd-660l.jpg</image:loc><image:title>Poubelle plastique</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/ordures-menageres.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/bac-galvanise-660l.jpg</image:loc><image:title>Ordures ménagères</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/caisson-metallique.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/caisson-metallique.jpg</image:loc><image:title>Caisson métallique</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/conteneur-galvanise.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/bac-galvanise-660l.jpg</image:loc><image:title>Conteneur galvanisé</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/corbeille-proprete.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/bac-galvanise-360l.jpg</image:loc><image:title>Corbeille de propreté</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/bacs-a-dechets.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/bac-pehd-660l.jpg</image:loc><image:title>Bacs à déchets</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/materiel-technique-proprete.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/NEGOCE3.jpeg</image:loc><image:title>Matériel technique de propreté</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://negocerationel.ma/benne-metallique.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://negocerationel.ma/assets/images/caisson-metallique.jpg</image:loc><image:title>Benne métallique</image:title></image:image>
+  </url>
+</urlset>

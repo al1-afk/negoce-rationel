@@ -1,23 +1,19 @@
 // ============= NEGOCE RATIONEL — Interactions =============
 
-// ----- i18n: Language switching (FR / AR) -----
 function applyLanguage(lang) {
   if (!window.I18N || !window.I18N[lang]) return;
   const dict = window.I18N[lang];
 
-  // Translate text content
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) el.textContent = dict[key];
   });
 
-  // Translate placeholders
   document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
   });
 
-  // Direction & font
   const html = document.documentElement;
   if (lang === 'ar') {
     html.setAttribute('lang', 'ar');
@@ -29,18 +25,15 @@ function applyLanguage(lang) {
     document.body.classList.remove('lang-ar');
   }
 
-  // Update active button state
   document.querySelectorAll('.lang-btn').forEach((btn) => {
-    if (btn.dataset.lang === lang) {
-      btn.classList.add('bg-brand-600', 'text-white');
-      btn.classList.remove('text-steel-700');
-    } else {
-      btn.classList.remove('bg-brand-600', 'text-white');
-      btn.classList.add('text-steel-700');
-    }
+    const isActive = btn.dataset.lang === lang;
+    btn.classList.toggle('bg-brand-600', isActive);
+    btn.classList.toggle('text-white', isActive);
+    btn.classList.toggle('text-steel-700', !isActive);
+    btn.setAttribute('aria-pressed', String(isActive));
   });
 
-  localStorage.setItem('negoce-lang', lang);
+  try { localStorage.setItem('negoce-lang', lang); } catch (_) {}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -51,44 +44,57 @@ document.addEventListener('DOMContentLoaded', () => {
       easing: 'ease-out-cubic',
       once: true,
       offset: 60,
+      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
     });
   }
 
-  // ----- Language switcher -----
+  // ----- Language switcher (URL ?lang= override + localStorage) -----
   document.querySelectorAll('.lang-btn').forEach((btn) => {
     btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
   });
-  const savedLang = localStorage.getItem('negoce-lang') || 'fr';
-  applyLanguage(savedLang);
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  let savedLang = 'fr';
+  try { savedLang = localStorage.getItem('negoce-lang') || 'fr'; } catch (_) {}
+  applyLanguage((urlLang === 'fr' || urlLang === 'ar') ? urlLang : savedLang);
 
   // ----- Mobile menu -----
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    const setOpen = (open) => {
+      mobileMenu.classList.toggle('hidden', !open);
+      menuToggle.setAttribute('aria-expanded', String(open));
       const icon = menuToggle.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-xmark');
+      if (icon) {
+        icon.classList.toggle('fa-bars', !open);
+        icon.classList.toggle('fa-xmark', open);
+      }
+    };
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      setOpen(!isOpen);
     });
     mobileMenu.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+      a.addEventListener('click', () => setOpen(false))
     );
+    // close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) setOpen(false);
+    });
   }
 
-  // ----- Navbar scroll effect -----
+  // ----- Navbar scroll effect + back-to-top -----
   const navbar = document.getElementById('navbar');
   const backToTop = document.getElementById('backToTop');
   const onScroll = () => {
+    if (!navbar) return;
     if (window.scrollY > 30) navbar.classList.add('scrolled');
     else navbar.classList.remove('scrolled');
 
-    if (window.scrollY > 600) {
-      backToTop.classList.remove('hidden');
-      backToTop.classList.add('flex');
-    } else {
-      backToTop.classList.add('hidden');
-      backToTop.classList.remove('flex');
+    if (backToTop) {
+      const show = window.scrollY > 600;
+      backToTop.classList.toggle('hidden', !show);
+      backToTop.classList.toggle('flex', show);
     }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -103,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----- Counter animation -----
   const counters = document.querySelectorAll('.counter');
   const animateCounter = (el) => {
-    const target = parseInt(el.dataset.target, 10);
+    const target = parseInt(el.dataset.target, 10) || 0;
     const duration = 1800;
     const startTime = performance.now();
     const easeOut = (t) => 1 - Math.pow(1 - t, 3);
@@ -136,30 +142,71 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
       const id = link.getAttribute('href');
-      if (id.length > 1) {
+      if (id && id.length > 1 && id !== '#') {
         const target = document.querySelector(id);
         if (target) {
           e.preventDefault();
           const offset = 80;
           const top = target.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top, behavior: 'smooth' });
+          // accessibility: move focus
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
         }
       }
     });
   });
 
-  // ----- Contact form (mailto fallback) -----
+  // ----- Pre-select product in form when clicking product CTA -----
+  document.querySelectorAll('a[href="#contact"][data-product]').forEach((a) => {
+    a.addEventListener('click', () => {
+      const wanted = a.getAttribute('data-product');
+      const select = document.getElementById('f-product');
+      if (!select || !wanted) return;
+      const opts = select.querySelectorAll('option');
+      let matched = false;
+      opts.forEach((opt) => {
+        if (opt.textContent.trim().toLowerCase().includes(wanted.toLowerCase().split(' ')[0])) {
+          if (!matched) { opt.selected = true; matched = true; }
+        }
+      });
+    });
+  });
+
+  // ----- Contact form (mailto fallback + validation + honeypot) -----
   const form = document.getElementById('contactForm');
   const formMsg = document.getElementById('formMsg');
+  const dict = () => (window.I18N && window.I18N[document.documentElement.lang]) || {};
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const data = new FormData(form);
-      const name = data.get('name') || '';
-      const email = data.get('email') || '';
-      const phone = data.get('phone') || '';
-      const product = data.get('product') || '';
-      const message = data.get('message') || '';
+      const honeypot = (data.get('website') || '').toString().trim();
+      if (honeypot) return; // bot trap
+
+      const name = (data.get('name') || '').toString().trim();
+      const email = (data.get('email') || '').toString().trim();
+      const phone = (data.get('phone') || '').toString().trim();
+      const product = (data.get('product') || '').toString().trim();
+      const message = (data.get('message') || '').toString().trim();
+
+      const showMsg = (text, ok = true) => {
+        if (!formMsg) return;
+        formMsg.textContent = text;
+        formMsg.className = `text-sm text-center font-semibold ${ok ? 'text-brand-700' : 'text-red-600'}`;
+        formMsg.classList.remove('hidden');
+      };
+
+      if (!name || !email) {
+        showMsg(dict()['form.err.required'] || 'Merci de remplir les champs obligatoires.', false);
+        return;
+      }
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRe.test(email)) {
+        showMsg(dict()['form.err.email'] || 'Adresse email invalide.', false);
+        return;
+      }
 
       const subject = `Demande de devis — ${product}`;
       const body =
@@ -174,24 +221,40 @@ document.addEventListener('DOMContentLoaded', () => {
       const mailto = `mailto:negocerationel@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
 
-      formMsg.textContent = '✓ Votre message est prêt à être envoyé. Vérifiez votre client mail.';
-      formMsg.className = 'text-sm text-center text-brand-700 font-semibold';
-      formMsg.classList.remove('hidden');
+      showMsg(dict()['form.ok'] || '✓ Votre client mail s\'ouvre.', true);
     });
   }
 
-  // ----- Product card subtle 3D tilt on mouse move -----
-  const cards = document.querySelectorAll('.product-card');
-  cards.forEach((card) => {
-    const inner = card.firstElementChild;
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 6;
-      const y = ((e.clientY - rect.top) / rect.height - 0.5) * -6;
-      inner.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg) translateY(-4px)`;
+  // ----- Product card subtle 3D tilt on mouse move (skipped on touch & reduced motion) -----
+  const supportsHover = window.matchMedia('(hover: hover)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (supportsHover && !reducedMotion) {
+    document.querySelectorAll('.product-card').forEach((card) => {
+      const inner = card.firstElementChild;
+      if (!inner) return;
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 6;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * -6;
+        inner.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        inner.style.transform = '';
+      });
     });
-    card.addEventListener('mouseleave', () => {
-      inner.style.transform = '';
+  }
+
+  // ----- FAQ : single-open accordion behavior -----
+  const faqList = document.getElementById('faqList');
+  if (faqList) {
+    faqList.querySelectorAll('details.faq-item').forEach((d) => {
+      d.addEventListener('toggle', () => {
+        if (d.open) {
+          faqList.querySelectorAll('details.faq-item').forEach((other) => {
+            if (other !== d) other.open = false;
+          });
+        }
+      });
     });
-  });
+  }
 });

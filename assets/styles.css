@@ -5,13 +5,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+
+/* Visible focus ring for keyboard users */
+:focus-visible {
+  outline: 2px solid #3a924f;
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
-body {
-  overflow-x: hidden;
-}
+/* Reset focus on programmatic targets */
+section:focus { outline: none; }
 
 /* ============= Arabic / RTL ============= */
 body.lang-ar {
@@ -27,25 +32,17 @@ body.lang-ar .font-display {
 body.lang-ar h1,
 body.lang-ar h2,
 body.lang-ar h3,
-body.lang-ar h4 {
-  letter-spacing: 0;
-}
+body.lang-ar h4 { letter-spacing: 0; }
 
-body.lang-ar .italic {
-  font-style: normal;
-}
+body.lang-ar .italic { font-style: normal; }
 
 body.lang-ar [dir="ltr"] {
   display: inline-block;
   unicode-bidi: embed;
 }
 
-/* Flip directional icons (arrows) when in RTL */
-[dir="rtl"] .rtl-flip {
-  transform: scaleX(-1);
-}
+[dir="rtl"] .rtl-flip { transform: scaleX(-1); }
 
-/* Form input padding fix in RTL */
 [dir="rtl"] input.pl-11,
 [dir="rtl"] textarea.pl-11 {
   padding-left: 1rem;
@@ -57,19 +54,13 @@ body.lang-ar [dir="ltr"] {
   right: 1rem;
 }
 
-/* Underline SVG flip in RTL */
-[dir="rtl"] h1 svg {
-  transform: scaleX(-1);
-}
+[dir="rtl"] h1 svg { transform: scaleX(-1); }
 
-/* Wave divider — keep oriented in RTL */
-[dir="rtl"] section .absolute > svg {
-  /* keep waves natural, no flip */
-}
+/* Floating action buttons: stay on right in RTL too (they are fixed bottom-6 right-6 by Tailwind classes) */
 
 /* ============= Keyframes ============= */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-12px); }
 }
 
@@ -97,13 +88,8 @@ body.lang-ar [dir="ltr"] {
 }
 
 /* ============= Scrollbar ============= */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #f0f9f1;
-}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f0f9f1; }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #5aae6c, #235e33);
   border-radius: 5px;
@@ -113,10 +99,7 @@ body.lang-ar [dir="ltr"] {
 }
 
 /* ============= Selection ============= */
-::selection {
-  background: #235e33;
-  color: white;
-}
+::selection { background: #235e33; color: white; }
 
 /* ============= Navbar shadow on scroll ============= */
 #navbar.scrolled {
@@ -144,15 +127,23 @@ select:focus {
 }
 
 /* ============= Container widths ============= */
-.container {
-  max-width: 1280px;
+.container { max-width: 1280px; }
+
+/* ============= FAQ <details> styling ============= */
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary { outline: none; }
+details.faq-item summary:focus-visible {
+  outline: 2px solid #3a924f;
+  outline-offset: 2px;
+  border-radius: 1rem;
+}
+details.faq-item[open] {
+  background: #f0f9f1;
+  border-color: #bbe1c1;
 }
 
 /* ============= Hover utilities ============= */
-.shine-on-hover {
-  position: relative;
-  overflow: hidden;
-}
+.shine-on-hover { position: relative; overflow: hidden; }
 .shine-on-hover::before {
   content: '';
   position: absolute;
@@ -163,13 +154,14 @@ select:focus {
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
   transition: left 0.6s;
 }
-.shine-on-hover:hover::before {
-  left: 100%;
-}
+.shine-on-hover:hover::before { left: 100%; }
 
 /* ============= Hide scrollbar on specific elements ============= */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ============= Avoid CLS on images during load ============= */
+img { max-width: 100%; height: auto; }
 
 /* ============= Reduced motion ============= */
 @media (prefers-reduced-motion: reduce) {
@@ -183,6 +175,7 @@ select:focus {
 
 /* ============= Print ============= */
 @media print {
-  #navbar, .fixed, footer { display: none !important; }
+  #navbar, .fixed, footer, [aria-label="Contact rapide"] { display: none !important; }
   body { color: #000; background: #fff; }
+  a { color: #000; text-decoration: underline; }
 }
